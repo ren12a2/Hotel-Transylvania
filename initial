@@ -1,0 +1,68 @@
+// Hotel Transylvania ( 26 February 2023 )
+#include <stdio.h>
+    struct hotel {
+        int room_no;
+        char name_of_visitor[20];
+        float days_of_stay;
+        float pay;
+        float due;
+    }S[10];
+int main() {
+   int j=0;
+   while(j<10){
+       printf("\nWelcome to Hotel Transylvania °_° \n");
+       printf("We offer 10 suites for Rs 1000 per day\n");
+    int i;
+    int selected_room;
+    int booked[10];
+    printf("\n select suite : ");
+    for(i=0;i<10;i++){
+        if(booked[i]!=1)
+        printf("%2d", i);
+    }
+    
+    printf("\nEnter your option: ");
+    scanf("%d", &selected_room);
+   
+    
+    for(i=0;i<10;i++){
+        if(selected_room==i){
+  booked[i]=1;
+ printf("\nSuite %d", i);
+ printf("\nEnter name: ");
+ scanf("%s", S[i].name_of_visitor);
+ printf("\nEnter days of stay: ");
+ scanf("%f", &S[i].days_of_stay);
+ S[i].pay= 1000*S[i].days_of_stay;
+ printf("\nYou need to pay %f", 
+ S[i].pay);
+        
+ printf("\n\nProceed to pay:");
+ printf("\nEnter amount: ");
+ float paid;
+ scanf("%f", &paid);
+    
+ if(paid==S[i].pay)
+ printf("\nPaid successfully\n");
+ 
+ else if(paid<S[i].pay)
+ {S[i].due= (S[i].pay)-paid;
+ printf("\npayment due: %f\n", S[i].due);}
+ 
+ }}
+ 
+ int stop;
+ printf("press 1 to stop and 0 to continue:  ");
+ scanf("%d", &stop);
+ if(stop==1)
+{ j=10;}
+ j++;
+ 
+ if(stop==1){
+ printf("Booking summary: \n");
+ for(i=0;i<10;i++){
+ if(booked[i]==1)
+ printf("Visitor:%s \n Due:%f \n\n", S[i].name_of_visitor, S[i].due);}}}
+
+ return 0;
+}
